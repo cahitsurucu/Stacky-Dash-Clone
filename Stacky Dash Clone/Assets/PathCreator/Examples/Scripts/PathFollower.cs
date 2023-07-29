@@ -10,6 +10,8 @@ namespace PathCreation.Examples
         public EndOfPathInstruction endOfPathInstruction;
         public float speed = 5;
         float distanceTravelled;
+        public Transform[] points;
+        Vector3 startPos, endPos;
 
         void Start() {
             if (pathCreator != null)
@@ -23,9 +25,9 @@ namespace PathCreation.Examples
         {
             if (pathCreator != null)
             {
-                distanceTravelled += speed * Time.deltaTime;
-                transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, endOfPathInstruction);
-                transform.rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled, endOfPathInstruction);
+                    distanceTravelled += speed * Time.deltaTime;
+                    transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled);
+                    transform.rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled);
             }
         }
 
@@ -35,4 +37,6 @@ namespace PathCreation.Examples
             distanceTravelled = pathCreator.path.GetClosestDistanceAlongPath(transform.position);
         }
     }
+
+    
 }
