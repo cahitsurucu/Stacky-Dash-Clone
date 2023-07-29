@@ -129,7 +129,7 @@ public class PlayerControl : MonoBehaviour
     public void changePos()
     {
         Transform child = transform.GetChild(0);
-        child.localPosition += new Vector3(0, 0.33333f, 0);
+        child.localPosition += new Vector3(0, 0.41f, 0);
     }
 
     private void OnTriggerEnter(Collider other)

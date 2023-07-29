@@ -8,7 +8,8 @@ public class PathController : MonoBehaviour
 
     public void addPath(GameObject other)
     {
-        paths.Add(other);
+        if(!paths.Contains(other))
+            paths.Add(other);
     }
 
     public void removePath(GameObject other)

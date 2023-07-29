@@ -28,7 +28,7 @@ public class StackManager : MonoBehaviour
         stack.Add(other.gameObject);
         other.gameObject.tag = "Untagged";
         other.gameObject.transform.SetParent(player.transform);
-        other.gameObject.transform.position = lastObj.transform.position + new Vector3(0, 0.042f, 0);
+        other.gameObject.transform.position = lastObj.transform.position + new Vector3(0, 0.052f, 0);
         lastObj = other.gameObject;
         player.GetComponent<PlayerControl>().changePos();
     }
