@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Tile
   - Path
+  - Bridge
+  - BridgeTile
+  - BridgePath
+  - BridgeStart
+  - BridgeFinish
   layers:
   - Default
   - TransparentFX

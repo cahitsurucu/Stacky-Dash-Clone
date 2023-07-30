@@ -16,6 +16,7 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] private StackManager stackManager;
 
     [SerializeField] bool isMoving = false;
+    [SerializeField] bool isMoveBridge = false;
 
     public enum Direction {Left, Right, Up, Down};
 
@@ -126,21 +127,33 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-    public void changePos()
+    public void changePos(Vector3 offset)
     {
         Transform child = transform.GetChild(0);
-        child.localPosition += new Vector3(0, 0.41f, 0);
+        child.localPosition += offset;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Path"))
+        if (other.gameObject.CompareTag("Path"))
         {
             pathController.addPath(other.gameObject);
         }
-        else if(other.gameObject.CompareTag("Tile"))
+        else if (other.gameObject.CompareTag("BridgePath"))
+        {
+            pathController.addPath(other.gameObject.transform.parent.gameObject);// bridge path
+        }
+        else if (other.gameObject.CompareTag("Tile"))
         {
             stackManager.addStack(other.gameObject);
+        }
+        else if (other.gameObject.CompareTag("BridgeStart"))
+        {
+            isMoveBridge = true;
+        }
+        else if (other.gameObject.CompareTag("BridgeFinish"))
+        {
+            isMoveBridge = false;
         }
     }
 
@@ -150,5 +163,14 @@ public class PlayerControl : MonoBehaviour
         {
             pathController.removePath(other.gameObject);
         }
+        else if(other.gameObject.CompareTag("BridgePath"))
+        {
+            pathController.removePath(other.gameObject.transform.parent.gameObject); // bridge path
+        }
+    }
+
+    public bool getBridgeMove()
+    {
+        return isMoveBridge;
     }
 }
