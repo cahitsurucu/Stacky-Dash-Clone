@@ -18,7 +18,7 @@ public class BridgeController : MonoBehaviour
     {
         if(other.gameObject.CompareTag("BridgeTile") && player.GetComponent<PlayerControl>().getBridgeMove())
         {
-            if (stackManager.getStackCount() != 0)
+            if (stackManager.getStackCount() != 0 && !isFinished)
                 removeStack(other.gameObject);
         }
     }
