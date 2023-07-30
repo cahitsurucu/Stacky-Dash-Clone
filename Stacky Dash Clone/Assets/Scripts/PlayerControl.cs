@@ -103,15 +103,15 @@ public class PlayerControl : MonoBehaviour
 
         if (transform.position == pathCreator.path.GetPoint(pathCreator.path.NumPoints - 1) || transform.position == pathCreator.path.GetPoint(0))
         {
-            if(direction == Direction.Left)
+            if (direction == Direction.Left)
             {
                 pathCreator.GetComponent<Path>().setDirection(Path.Direction.Right);
             }
-            else if(direction == Direction.Right)
+            else if (direction == Direction.Right)
             {
                 pathCreator.GetComponent<Path>().setDirection(Path.Direction.Left);
             }
-            else if(direction == Direction.Up)
+            else if (direction == Direction.Up)
             {
                 pathCreator.GetComponent<Path>().setDirection(Path.Direction.Down);
             }
@@ -133,6 +133,43 @@ public class PlayerControl : MonoBehaviour
         child.localPosition += offset;
     }
 
+    private void changePath(GameObject other)
+    {
+        pathController.addPath(other.gameObject.GetComponent<BridgeMovement>().getPath());
+        pathCreator = other.gameObject.GetComponent<BridgeMovement>().getPath().GetComponent<PathCreator>();
+        other.gameObject.GetComponent<BridgeMovement>().changeDirection();
+        currentMoveDirection = pathCreator.GetComponent<Path>().getMoveDirection();
+        isMoving = true;
+        isMoveBridge = true;
+        Debug.Log("Setting Current Path");
+    }
+
+    private void setPath(GameObject other)
+    {
+        if (direction == Direction.Left)
+        {
+            pathCreator.GetComponent<Path>().setDirection(Path.Direction.Right);
+        }
+        else if (direction == Direction.Right)
+        {
+            pathCreator.GetComponent<Path>().setDirection(Path.Direction.Left);
+        }
+        else if (direction == Direction.Up)
+        {
+            pathCreator.GetComponent<Path>().setDirection(Path.Direction.Down);
+        }
+        else
+        {
+            pathCreator.GetComponent<Path>().setDirection(Path.Direction.Up);
+        }
+        pathCreator.GetComponent<Path>().setMoveDirection();
+        pathCreator.GetComponent<Path>().setDistance(distanceTravelled);
+        pathCreator = null;
+        distanceTravelled = 0;
+        Debug.Log("Changing other Path");
+        changePath(other);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Path"))
@@ -149,10 +186,13 @@ public class PlayerControl : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("BridgeStart"))
         {
-            isMoveBridge = true;
+            if(!isMoveBridge)
+                setPath(other.gameObject);
         }
         else if (other.gameObject.CompareTag("BridgeFinish"))
         {
+            if(isMoveBridge) // Change Variable Error
+                setPath(other.gameObject);
             isMoveBridge = false;
         }
     }
