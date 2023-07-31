@@ -148,7 +148,6 @@ public class PlayerControl : MonoBehaviour
 
     private void setPath(GameObject other)
     {
-        Debug.Log(other.gameObject.tag);
         if(pathCreator != null)
         {
             if (direction == Direction.Left)
