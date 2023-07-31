@@ -360,7 +360,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 58836455}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -1.7110001, y: 0.08, z: -0.66200066}
+  m_LocalPosition: {x: -1.679, y: 0.08, z: -0.66200066}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -419,10 +419,10 @@ MonoBehaviour:
   editorData:
     _bezierPath:
       points:
-      - {x: -0.07999992, y: 0, z: 3.0657291}
-      - {x: -0.059999928, y: 0, z: 2.2927053}
-      - {x: -0.08000004, y: 0, z: 1.580694}
-      - {x: -0.08000004, y: 0, z: 0.072460175}
+      - {x: -0.08532822, y: 0.001177445, z: 3.109168}
+      - {x: -0.065328225, y: 0.001177445, z: 2.3361442}
+      - {x: -0.08532822, y: 0, z: 1.580694}
+      - {x: -0.08532822, y: 0, z: 0.072460175}
       isClosed: 0
       space: 0
       controlMode: 0
@@ -481,7 +481,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 94345948}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.41, y: 0, z: 12.43}
+  m_LocalPosition: {x: 3.43, y: 0, z: 12.43}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -506,7 +506,7 @@ GameObject:
   - component: {fileID: 107688220}
   m_Layer: 0
   m_Name: Cube (15)
-  m_TagString: BridgeTile
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -944,7 +944,7 @@ GameObject:
   - component: {fileID: 174182141}
   m_Layer: 0
   m_Name: Cube (38)
-  m_TagString: BridgeTile
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1154,7 +1154,7 @@ GameObject:
   - component: {fileID: 182642149}
   m_Layer: 0
   m_Name: Cube (34)
-  m_TagString: BridgeTile
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1298,7 +1298,7 @@ GameObject:
   - component: {fileID: 232312102}
   m_Layer: 0
   m_Name: Cube (29)
-  m_TagString: BridgeTile
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1403,7 +1403,7 @@ GameObject:
   - component: {fileID: 251926664}
   m_Layer: 0
   m_Name: Cube (25)
-  m_TagString: BridgeTile
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1613,7 +1613,7 @@ GameObject:
   - component: {fileID: 275280054}
   m_Layer: 0
   m_Name: Cube (33)
-  m_TagString: BridgeTile
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1928,7 +1928,7 @@ GameObject:
   - component: {fileID: 326052070}
   m_Layer: 0
   m_Name: Cube (27)
-  m_TagString: BridgeTile
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2033,7 +2033,7 @@ GameObject:
   - component: {fileID: 369414151}
   m_Layer: 0
   m_Name: Cube (24)
-  m_TagString: BridgeTile
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2138,7 +2138,7 @@ GameObject:
   - component: {fileID: 373715987}
   m_Layer: 0
   m_Name: Cube (23)
-  m_TagString: BridgeTile
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2243,7 +2243,7 @@ GameObject:
   - component: {fileID: 381763715}
   m_Layer: 0
   m_Name: Cube (21)
-  m_TagString: BridgeTile
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2453,7 +2453,7 @@ GameObject:
   - component: {fileID: 417763957}
   m_Layer: 0
   m_Name: Cube (10)
-  m_TagString: BridgeTile
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2780,7 +2780,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 429991101}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: 0.009999998, y: -0.08, z: 0.017}
+  m_LocalPosition: {x: 0.009999998, y: -0.08, z: 0.088}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2806,8 +2806,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.6637615, y: 0.58455396, z: 0.25160027}
-  m_Center: {x: 0.091398776, y: 0.020382762, z: 0.17591476}
+  m_Size: {x: 0.46439838, y: 0.35116205, z: 0.026076078}
+  m_Center: {x: 0.03161487, y: 0.08849038, z: 0.06315267}
 --- !u!114 &429991104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3484,7 +3484,7 @@ GameObject:
   - component: {fileID: 686954774}
   m_Layer: 0
   m_Name: Cube (36)
-  m_TagString: BridgeTile
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3589,7 +3589,7 @@ GameObject:
   - component: {fileID: 690198325}
   m_Layer: 0
   m_Name: Cube (20)
-  m_TagString: BridgeTile
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3841,7 +3841,7 @@ GameObject:
   - component: {fileID: 746859649}
   m_Layer: 0
   m_Name: Cube (12)
-  m_TagString: BridgeTile
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3946,7 +3946,7 @@ GameObject:
   - component: {fileID: 754544298}
   m_Layer: 0
   m_Name: Cube (11)
-  m_TagString: BridgeTile
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5014,7 +5014,7 @@ GameObject:
   - component: {fileID: 1040041528}
   m_Layer: 0
   m_Name: Cube (22)
-  m_TagString: BridgeTile
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5119,7 +5119,7 @@ GameObject:
   - component: {fileID: 1121190105}
   m_Layer: 0
   m_Name: Cube (19)
-  m_TagString: BridgeTile
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5224,7 +5224,7 @@ GameObject:
   - component: {fileID: 1172234120}
   m_Layer: 0
   m_Name: Cube (18)
-  m_TagString: BridgeTile
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5329,7 +5329,7 @@ GameObject:
   - component: {fileID: 1174989690}
   m_Layer: 0
   m_Name: Cube (17)
-  m_TagString: BridgeTile
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5783,7 +5783,7 @@ GameObject:
   - component: {fileID: 1249930263}
   m_Layer: 0
   m_Name: Cube (37)
-  m_TagString: BridgeTile
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5888,7 +5888,7 @@ GameObject:
   - component: {fileID: 1254327827}
   m_Layer: 0
   m_Name: Cube (35)
-  m_TagString: BridgeTile
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6170,7 +6170,6 @@ Transform:
   - {fileID: 140060107}
   - {fileID: 1869135627}
   - {fileID: 1238432864}
-  - {fileID: 2066150130}
   - {fileID: 552570755}
   m_Father: {fileID: 1904692495}
   m_RootOrder: -1
@@ -6189,7 +6188,7 @@ GameObject:
   - component: {fileID: 1308207620}
   m_Layer: 0
   m_Name: Cube (28)
-  m_TagString: BridgeTile
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6434,7 +6433,7 @@ GameObject:
   - component: {fileID: 1351290224}
   m_Layer: 0
   m_Name: Cube (32)
-  m_TagString: BridgeTile
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6749,7 +6748,7 @@ GameObject:
   - component: {fileID: 1494139018}
   m_Layer: 0
   m_Name: Cube (14)
-  m_TagString: BridgeTile
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6854,7 +6853,7 @@ GameObject:
   - component: {fileID: 1511239989}
   m_Layer: 0
   m_Name: Cube (31)
-  m_TagString: BridgeTile
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6959,7 +6958,7 @@ GameObject:
   - component: {fileID: 1527040711}
   m_Layer: 0
   m_Name: Cube (8)
-  m_TagString: BridgeTile
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7169,7 +7168,7 @@ GameObject:
   - component: {fileID: 1634380418}
   m_Layer: 0
   m_Name: Cube (7)
-  m_TagString: BridgeTile
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7532,7 +7531,7 @@ GameObject:
   - component: {fileID: 1718827171}
   m_Layer: 0
   m_Name: Cube (30)
-  m_TagString: BridgeTile
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7651,6 +7650,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2066150130}
   - {fileID: 1194732068}
   - {fileID: 956425594}
   - {fileID: 1713469964}
@@ -8039,7 +8039,7 @@ GameObject:
   - component: {fileID: 1837053636}
   m_Layer: 0
   m_Name: Cube (16)
-  m_TagString: BridgeTile
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8144,7 +8144,7 @@ GameObject:
   - component: {fileID: 1850078877}
   m_Layer: 0
   m_Name: Cube (13)
-  m_TagString: BridgeTile
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8354,7 +8354,7 @@ GameObject:
   - component: {fileID: 1850802937}
   m_Layer: 0
   m_Name: Cube (9)
-  m_TagString: BridgeTile
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8838,7 +8838,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1912115794}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: -0.093000054, y: -0.08, z: 3.427}
+  m_LocalPosition: {x: -0.093000054, y: -0.08, z: 3.396}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8864,8 +8864,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.6637615, y: 0.58455396, z: 0.25160027}
-  m_Center: {x: 0.091398776, y: 0.020382762, z: 0.17591476}
+  m_Size: {x: 0.4389267, y: 0.27303767, z: 0.026989937}
+  m_Center: {x: 0.027603626, y: 0.0050060824, z: 0.28821993}
 --- !u!114 &1912115797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9421,7 +9421,7 @@ GameObject:
   - component: {fileID: 2052446375}
   m_Layer: 0
   m_Name: Cube (26)
-  m_TagString: BridgeTile
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9565,8 +9565,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.37620157, y: 0.14660752, z: 2.9919543}
-  m_Center: {x: -0.04140328, y: 0.06625427, z: -1.5068815}
+  m_Size: {x: 0.37620157, y: 0.14660752, z: 3.0628421}
+  m_Center: {x: -0.04140328, y: 0.06625427, z: -1.4714376}
 --- !u!114 &2066150129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9582,25 +9582,25 @@ MonoBehaviour:
   editorData:
     _bezierPath:
       points:
-      - {x: -0.06, y: 0, z: -0.0040864944}
-      - {x: -0.044992387, y: 0, z: -0.58414876}
-      - {x: -0.055779617, y: 0.0067230053, z: -1.8002645}
-      - {x: -0.06075396, y: -0.0027558357, z: -2.9032502}
-      - {x: -0.061050165, y: -0.0033202686, z: -2.9689293}
-      - {x: 0, y: -0.027532298, z: -2.9557436}
-      - {x: -0.47287822, y: -0.032966092, z: -2.961412}
-      - {x: -0.67509484, y: -0.035289742, z: -2.963836}
-      - {x: -0.7333277, y: -0.02675064, z: -2.9696536}
-      - {x: -0.9755183, y: -0.01697345, z: -2.961412}
-      - {x: -1.4191754, y: 0.00093689933, z: -2.9463146}
-      - {x: -1.6113021, y: -0.01608284, z: -2.9541678}
-      - {x: -1.8220472, y: 0, z: -2.961412}
-      - {x: -1.8723204, y: 0.0038365573, z: -2.96314}
-      - {x: -1.8464246, y: -0.0031603128, z: -3.52526}
-      - {x: -1.8471805, y: 0, z: -3.5653396}
-      - {x: -1.8526229, y: 0.022753524, z: -3.8539033}
-      - {x: -1.8662152, y: -0.06494506, z: -4.3320208}
-      - {x: -1.84718, y: -0.035817817, z: -5.1293073}
+      - {x: -0.05502665, y: -0.000014230609, z: 0.045233488}
+      - {x: -0.04001904, y: -0.000014230609, z: -0.5348288}
+      - {x: -0.050052308, y: 0.0067230053, z: -1.9228674}
+      - {x: -0.05502665, y: -0.0027558357, z: -3.0258532}
+      - {x: -0.055322856, y: -0.0033202686, z: -3.0915322}
+      - {x: 0.00046217442, y: -0.013895597, z: -3.056918}
+      - {x: -0.47241604, y: -0.019329391, z: -3.0625863}
+      - {x: -0.67463267, y: -0.021653041, z: -3.0650103}
+      - {x: -0.7331002, y: -0.02592232, z: -3.0702634}
+      - {x: -0.975489, y: -0.027820848, z: -3.062273}
+      - {x: -1.4169412, y: -0.03127855, z: -3.0477204}
+      - {x: -1.6046916, y: -0.024833642, z: -3.0550466}
+      - {x: -1.8176173, y: -0.01522208, z: -3.0624413}
+      - {x: -1.8679848, y: -0.012948471, z: -3.0641906}
+      - {x: -1.8472561, y: -0.010233669, z: -3.5276039}
+      - {x: -1.8482347, y: -0.010184899, z: -3.5678034}
+      - {x: -1.8553047, y: -0.009832546, z: -3.8582392}
+      - {x: -1.8902154, y: -0.008849487, z: -4.3287}
+      - {x: -1.8739736, y: -0.004934028, z: -5.1299386}
       isClosed: 0
       space: 0
       controlMode: 0
@@ -9648,14 +9648,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2066150126}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -0.041, y: 0.08, z: 3.539}
+  m_LocalPosition: {x: 0.009999998, y: 0.08, z: -1.4580002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 741482960}
   - {fileID: 1777899241}
   - {fileID: 429991102}
-  m_Father: {fileID: 1300586368}
+  m_Father: {fileID: 1751031699}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &2102264901
@@ -12196,6 +12196,7 @@ MonoBehaviour:
   stackManager: {fileID: 0}
   isMoving: 0
   isMoveBridge: 0
+  canCollide: 1
 --- !u!114 &8053163461436256390
 MonoBehaviour:
   m_ObjectHideFlags: 0

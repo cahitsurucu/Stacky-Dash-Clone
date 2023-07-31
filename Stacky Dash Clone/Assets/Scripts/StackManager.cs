@@ -17,6 +17,7 @@ public class StackManager : MonoBehaviour
 
     public void addStack(GameObject other)
     {
+        
         stack.Add(other.gameObject);
         other.gameObject.tag = "BridgeTile";
         other.gameObject.transform.SetParent(player.transform);
@@ -46,6 +47,7 @@ public class StackManager : MonoBehaviour
     public void removeStack(GameObject other)
     {
         stack.Remove(other);
+        lastObj = stack[stack.Count - 1];
     }
 
     public GameObject getLastObj()

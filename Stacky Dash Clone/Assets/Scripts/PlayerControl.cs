@@ -17,6 +17,7 @@ public class PlayerControl : MonoBehaviour
 
     [SerializeField] bool isMoving = false;
     [SerializeField] bool isMoveBridge = false;
+    [SerializeField] bool canCollide = true;
 
     public enum Direction {Left, Right, Up, Down};
 
@@ -147,6 +148,7 @@ public class PlayerControl : MonoBehaviour
 
     private void setPath(GameObject other)
     {
+        Debug.Log(other.gameObject.tag);
         if(pathCreator != null)
         {
             if (direction == Direction.Left)
@@ -183,6 +185,12 @@ public class PlayerControl : MonoBehaviour
         changePath(other);
     }
 
+    private IEnumerator resetCollide()
+    {
+        yield return new WaitForSeconds(1f);
+        canCollide = true;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Path"))
@@ -205,6 +213,7 @@ public class PlayerControl : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("BridgeFinish"))
         {
+            
             if(isMoveBridge)
                 setPath(other.gameObject);
             isMoveBridge = false;
@@ -221,12 +230,16 @@ public class PlayerControl : MonoBehaviour
         {
             pathController.removePath(other.gameObject.transform.parent.gameObject); // bridge path
         }
-        else if(other.gameObject.CompareTag("BridgeStart"))
+        else if(other.gameObject.CompareTag("BridgeStart") && canCollide)
         {
+            canCollide = false;
+            StartCoroutine(resetCollide());
             other.gameObject.tag = "BridgeFinish";
         }
-        else if(other.gameObject.CompareTag("BridgeFinish"))
+        else if(other.gameObject.CompareTag("BridgeFinish") && canCollide)
         {
+            canCollide = false;
+            StartCoroutine(resetCollide());
             other.gameObject.tag = "BridgeStart";
         }
     }
