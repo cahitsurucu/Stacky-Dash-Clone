@@ -206,15 +206,10 @@ public class PlayerControl : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("BridgeStart"))
         {
-            if(!isMoveBridge)
-                setPath(other.gameObject);
             isMoveBridge = true;
         }
         else if (other.gameObject.CompareTag("BridgeFinish"))
         {
-            
-            if(isMoveBridge)
-                setPath(other.gameObject);
             isMoveBridge = false;
         }
     }

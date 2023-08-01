@@ -47,7 +47,8 @@ public class StackManager : MonoBehaviour
     public void removeStack(GameObject other)
     {
         stack.Remove(other);
-        lastObj = stack[stack.Count - 1];
+        if(stack.Count != 0)
+            lastObj = stack[stack.Count - 1];
     }
 
     public GameObject getLastObj()
