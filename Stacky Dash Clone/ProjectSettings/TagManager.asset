@@ -11,6 +11,7 @@ TagManager:
   - BridgePath
   - BridgeStart
   - BridgeFinish
+  - GameManager
   layers:
   - Default
   - TransparentFX

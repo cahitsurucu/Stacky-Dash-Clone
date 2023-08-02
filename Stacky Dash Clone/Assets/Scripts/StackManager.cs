@@ -7,23 +7,25 @@ public class StackManager : MonoBehaviour
     GameObject player;
     [SerializeField] private List<GameObject> stack;
     public GameObject lastObj;
+    [SerializeField] private GameManager manager;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+        manager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
         stack.Add(lastObj);
     }
 
     public void addStack(GameObject other)
     {
-        
         stack.Add(other.gameObject);
         other.gameObject.tag = "BridgeTile";
         other.gameObject.transform.SetParent(player.transform);
         other.gameObject.transform.position = lastObj.transform.position + new Vector3(0, 0.052f, 0);
         lastObj = other.gameObject;
         player.GetComponent<PlayerControl>().changePos(new Vector3(0, 0.41f, 0));
+        manager.increaseScore();
     }
 
     /*public void removeStack(GameObject other)
@@ -46,6 +48,7 @@ public class StackManager : MonoBehaviour
 
     public void removeStack(GameObject other)
     {
+        manager.decreaseScore();
         stack.Remove(other);
         if(stack.Count != 0)
             lastObj = stack[stack.Count - 1];
