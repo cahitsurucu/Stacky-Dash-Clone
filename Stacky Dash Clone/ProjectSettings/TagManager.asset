@@ -12,6 +12,8 @@ TagManager:
   - BridgeStart
   - BridgeFinish
   - GameManager
+  - Diamond
+  - GameFinish
   layers:
   - Default
   - TransparentFX

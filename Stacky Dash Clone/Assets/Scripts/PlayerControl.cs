@@ -9,15 +9,19 @@ public class PlayerControl : MonoBehaviour
     Vector3 startPos, endPos;
     [SerializeField] private PathCreator pathCreator;
     public float distanceTravelled;
-    public float speed;
+    public float verticalSpeed;
+    public float horizontalSpeed;
+    float pos;
     [SerializeField] private PathController pathController;
     [SerializeField] private Direction direction;
     [SerializeField] private int currentMoveDirection;
     [SerializeField] private StackManager stackManager;
+    [SerializeField] private GameManager manager;
 
     [SerializeField] bool isMoving = false;
     [SerializeField] bool isMoveBridge = false;
     [SerializeField] bool canCollide = true;
+    [SerializeField] bool finished = false;
 
     public enum Direction {Left, Right, Up, Down};
 
@@ -25,49 +29,56 @@ public class PlayerControl : MonoBehaviour
     {
         pathController = this.gameObject.GetComponent<PathController>();
         stackManager = this.gameObject.GetComponent<StackManager>();
+        manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
     void Update()
     {
-        if(!isMoving)
+        if(!finished)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (!isMoving)
             {
-                startPos = Input.mousePosition;
+                if (Input.GetMouseButtonDown(0))
+                {
+                    startPos = Input.mousePosition;
+                }
+                else if (Input.GetMouseButtonUp(0))
+                {
+                    endPos = startPos - Input.mousePosition;
+                    float x = endPos.x < 0f ? endPos.x * -1 : endPos.x;
+                    float y = endPos.y < 0f ? endPos.y * -1 : endPos.y;
+                    if (x < y)
+                    {
+                        if (endPos.y > 0)
+                        {
+                            setDirection(Direction.Down);
+                        }
+                        else
+                        {
+                            setDirection(Direction.Up);
+                        }
+                    }
+                    else
+                    {
+                        if (endPos.x > 0)
+                        {
+                            setDirection(Direction.Left);
+                        }
+                        else
+                        {
+                            setDirection(Direction.Right);
+                        }
+                    }
+                }
             }
-            else if (Input.GetMouseButtonUp(0))
+            else
             {
-                endPos = startPos - Input.mousePosition;
-                float x = endPos.x < 0f ? endPos.x * -1 : endPos.x;
-                float y = endPos.y < 0f ? endPos.y * -1 : endPos.y;
-                if (x < y)
-                {
-                    if (endPos.y > 0)
-                    {
-                        setDirection(Direction.Down);
-                    }
-                    else
-                    {
-                        setDirection(Direction.Up);
-                    }
-                }
-                else
-                {
-                    if (endPos.x > 0)
-                    {
-                        setDirection(Direction.Left);
-                    }
-                    else
-                    {
-                        setDirection(Direction.Right);
-                    }
-                }
+                PathMove();
             }
         }
-
-        if(isMoving)
+        else
         {
-            Move();
+            FinishMove();
         }
     }
 
@@ -97,9 +108,18 @@ public class PlayerControl : MonoBehaviour
         return direction;
     }
 
-    private void Move()
+    private void FinishMove()
     {
-        distanceTravelled += speed * currentMoveDirection * Time.deltaTime;
+        if(Input.GetMouseButton(0))
+        {
+            pos = Input.GetAxisRaw("Mouse X") * horizontalSpeed * Time.deltaTime;
+        }
+        transform.position += new Vector3(pos, 0, verticalSpeed * Time.deltaTime);
+    }
+
+    private void PathMove()
+    {
+        distanceTravelled += verticalSpeed * currentMoveDirection * Time.deltaTime;
         transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled,EndOfPathInstruction.Stop);
 
         if (transform.position == pathCreator.path.GetPoint(pathCreator.path.NumPoints - 1) || transform.position == pathCreator.path.GetPoint(0))
@@ -211,6 +231,18 @@ public class PlayerControl : MonoBehaviour
         else if (other.gameObject.CompareTag("BridgeFinish"))
         {
             isMoveBridge = false;
+        }
+        else if(other.gameObject.CompareTag("Finish"))
+        {
+            if(!finished)
+                stackManager.destroyTile();
+            finished = true;
+
+        }
+        else if(other.gameObject.CompareTag("Diamond"))
+        {
+            manager.increaseMoney();
+            Destroy(other.gameObject);
         }
     }
 

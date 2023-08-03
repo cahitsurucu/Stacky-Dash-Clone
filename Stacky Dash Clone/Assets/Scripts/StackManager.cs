@@ -28,24 +28,6 @@ public class StackManager : MonoBehaviour
         manager.increaseScore();
     }
 
-    /*public void removeStack(GameObject other)
-    {
-        if(getStackCount() != 0)
-            StartCoroutine(waiter(other));
-    }
-
-    private IEnumerator waiter(GameObject other)
-    {
-        lastObj = stack[stack.Count - 1];
-        lastObj.transform.position = other.transform.position;
-        lastObj.transform.SetParent(null);
-        player.GetComponent<PlayerControl>().changePos(new Vector3(0, -0.41f, 0));
-        stack.Remove(lastObj);
-        yield return new WaitForSeconds(0.1f);
-        if(player.GetComponent<PlayerControl>().getBridgeMove())
-            removeStack(other);
-    }*/
-
     public void removeStack(GameObject other)
     {
         manager.decreaseScore();
@@ -62,5 +44,21 @@ public class StackManager : MonoBehaviour
     public int getStackCount()
     {
         return stack.Count;
+    }
+
+    public void destroyTile()
+    {
+        StartCoroutine(destroy());
+    }
+
+    private IEnumerator destroy()
+    {
+        GameObject temp = getLastObj();
+        stack.Remove(temp);
+        Destroy(temp);
+        player.GetComponent<PlayerControl>().changePos(new Vector3(0, -0.41f, 0));
+        yield return new WaitForSeconds(0.2f);
+        if (stack.Count != 0)
+            destroyTile();
     }
 }

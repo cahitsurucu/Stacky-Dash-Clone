@@ -5,9 +5,12 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("Score")]
     [SerializeField] private TMP_Text score;
-    [SerializeField] int Score;
-    [SerializeField] int scoreCount;
+    [SerializeField] int Score,scoreCount;
+    [Header("Money")]
+    [SerializeField] private TMP_Text moneyText;
+    [SerializeField] private int money;
 
     public void increaseScore()
     {
@@ -19,5 +22,11 @@ public class GameManager : MonoBehaviour
     {
         Score -= scoreCount;
         score.text = Score.ToString();
+    }
+
+    public void increaseMoney()
+    {
+        money += 1;
+        moneyText.text = money.ToString();
     }
 }
