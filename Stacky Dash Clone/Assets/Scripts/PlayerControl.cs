@@ -21,7 +21,8 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] bool isMoving = false;
     [SerializeField] bool isMoveBridge = false;
     [SerializeField] bool canCollide = true;
-    [SerializeField] bool finished = false;
+    [SerializeField] bool pathFinished = false;
+    [SerializeField] bool gameFinished = false;
 
     public enum Direction {Left, Right, Up, Down};
 
@@ -34,51 +35,54 @@ public class PlayerControl : MonoBehaviour
 
     void Update()
     {
-        if(!finished)
+        if(!gameFinished)
         {
-            if (!isMoving)
+            if (!pathFinished)
             {
-                if (Input.GetMouseButtonDown(0))
+                if (!isMoving)
                 {
-                    startPos = Input.mousePosition;
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        startPos = Input.mousePosition;
+                    }
+                    else if (Input.GetMouseButtonUp(0))
+                    {
+                        endPos = startPos - Input.mousePosition;
+                        float x = endPos.x < 0f ? endPos.x * -1 : endPos.x;
+                        float y = endPos.y < 0f ? endPos.y * -1 : endPos.y;
+                        if (x < y)
+                        {
+                            if (endPos.y > 0)
+                            {
+                                setDirection(Direction.Down);
+                            }
+                            else
+                            {
+                                setDirection(Direction.Up);
+                            }
+                        }
+                        else
+                        {
+                            if (endPos.x > 0)
+                            {
+                                setDirection(Direction.Left);
+                            }
+                            else
+                            {
+                                setDirection(Direction.Right);
+                            }
+                        }
+                    }
                 }
-                else if (Input.GetMouseButtonUp(0))
+                else
                 {
-                    endPos = startPos - Input.mousePosition;
-                    float x = endPos.x < 0f ? endPos.x * -1 : endPos.x;
-                    float y = endPos.y < 0f ? endPos.y * -1 : endPos.y;
-                    if (x < y)
-                    {
-                        if (endPos.y > 0)
-                        {
-                            setDirection(Direction.Down);
-                        }
-                        else
-                        {
-                            setDirection(Direction.Up);
-                        }
-                    }
-                    else
-                    {
-                        if (endPos.x > 0)
-                        {
-                            setDirection(Direction.Left);
-                        }
-                        else
-                        {
-                            setDirection(Direction.Right);
-                        }
-                    }
+                    PathMove();
                 }
             }
             else
             {
-                PathMove();
+                FinishMove();
             }
-        }
-        else
-        {
-            FinishMove();
         }
     }
 
@@ -218,7 +222,7 @@ public class PlayerControl : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("BridgePath"))
         {
-            pathController.addPath(other.gameObject.transform.parent.gameObject);// bridge path
+            pathController.addPath(other.gameObject.transform.parent.gameObject);
         }
         else if (other.gameObject.CompareTag("Tile"))
         {
@@ -234,15 +238,20 @@ public class PlayerControl : MonoBehaviour
         }
         else if(other.gameObject.CompareTag("Finish"))
         {
-            if(!finished)
+            if(!pathFinished)
                 stackManager.destroyTile();
-            finished = true;
+            pathFinished = true;
 
         }
         else if(other.gameObject.CompareTag("Diamond"))
         {
             manager.increaseMoney();
             Destroy(other.gameObject);
+        }
+        else if(other.gameObject.CompareTag("GameFinish"))
+        {
+            gameFinished = true;
+            stackManager.stopCoroutine();
         }
     }
 
@@ -254,7 +263,7 @@ public class PlayerControl : MonoBehaviour
         }
         else if(other.gameObject.CompareTag("BridgePath"))
         {
-            pathController.removePath(other.gameObject.transform.parent.gameObject); // bridge path
+            pathController.removePath(other.gameObject.transform.parent.gameObject);
         }
         else if(other.gameObject.CompareTag("BridgeStart") && canCollide)
         {

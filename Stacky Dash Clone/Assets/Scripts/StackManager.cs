@@ -46,6 +46,11 @@ public class StackManager : MonoBehaviour
         return stack.Count;
     }
 
+    public void stopCoroutine()
+    {
+        StopAllCoroutines();
+    }
+
     public void destroyTile()
     {
         StartCoroutine(destroy());
@@ -57,7 +62,7 @@ public class StackManager : MonoBehaviour
         stack.Remove(temp);
         Destroy(temp);
         player.GetComponent<PlayerControl>().changePos(new Vector3(0, -0.41f, 0));
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.15f);
         if (stack.Count != 0)
             destroyTile();
     }

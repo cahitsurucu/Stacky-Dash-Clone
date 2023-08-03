@@ -14943,7 +14943,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -26842,10 +26842,12 @@ MonoBehaviour:
   direction: 0
   currentMoveDirection: 0
   stackManager: {fileID: 0}
+  manager: {fileID: 0}
   isMoving: 0
   isMoveBridge: 0
   canCollide: 1
-  finished: 0
+  pathFinished: 0
+  gameFinished: 0
 --- !u!114 &8053163461436256390
 MonoBehaviour:
   m_ObjectHideFlags: 0
