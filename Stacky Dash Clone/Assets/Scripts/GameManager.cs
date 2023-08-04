@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class GameManager : MonoBehaviour
@@ -11,6 +12,8 @@ public class GameManager : MonoBehaviour
     [Header("Money")]
     [SerializeField] private TMP_Text moneyText;
     [SerializeField] private int money;
+    [Header("Finish Canvas")]
+    [SerializeField] private GameObject finish;
 
     public void increaseScore()
     {
@@ -28,5 +31,15 @@ public class GameManager : MonoBehaviour
     {
         money += 1;
         moneyText.text = money.ToString();
+    }
+
+    public void restart()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void setActiveFinishCanvas(bool temp)
+    {
+        finish.SetActive(temp);
     }
 }

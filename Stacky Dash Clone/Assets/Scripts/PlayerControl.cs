@@ -31,6 +31,7 @@ public class PlayerControl : MonoBehaviour
         pathController = this.gameObject.GetComponent<PathController>();
         stackManager = this.gameObject.GetComponent<StackManager>();
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        manager.setActiveFinishCanvas(false);
     }
 
     void Update()
@@ -250,9 +251,15 @@ public class PlayerControl : MonoBehaviour
         }
         else if(other.gameObject.CompareTag("GameFinish"))
         {
-            gameFinished = true;
-            stackManager.stopCoroutine();
+            setFinish();
         }
+    }
+
+    public void setFinish()
+    {
+        gameFinished = true;
+        stackManager.stopCoroutine();
+        manager.setActiveFinishCanvas(true);
     }
 
     private void OnTriggerExit(Collider other)

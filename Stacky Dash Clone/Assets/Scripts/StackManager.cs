@@ -62,8 +62,10 @@ public class StackManager : MonoBehaviour
         stack.Remove(temp);
         Destroy(temp);
         player.GetComponent<PlayerControl>().changePos(new Vector3(0, -0.41f, 0));
-        yield return new WaitForSeconds(0.15f);
+        yield return new WaitForSeconds(0.05f);
         if (stack.Count != 0)
             destroyTile();
+        else
+            player.GetComponent<PlayerControl>().setFinish();
     }
 }
